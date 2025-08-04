@@ -172,7 +172,7 @@ describe('Performance Tests', () => {
     
     it('should release all objects', () => {
       // Get some objects first
-      const bullets = []
+      const bullets: PooledBullet[] = []
       for (let i = 0; i < 3; i++) {
         const bullet = bulletPool.get()
         if (bullet) {
