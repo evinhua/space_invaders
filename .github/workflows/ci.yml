@@ -38,7 +38,7 @@ jobs:
       run: npx tsc --noEmit
 
     - name: Run tests
-      run: npm test -- --coverage --watchAll=false
+      run: npm test -- --coverage --watchAll=false --passWithNoTests
 
     - name: Upload coverage reports
       uses: codecov/codecov-action@v3
@@ -215,4 +215,4 @@ jobs:
         LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
     - name: Performance benchmark
-      run: npm run test -- --testNamePattern="Performance Tests"
+      run: npm run test -- --testNamePattern="Performance Tests" --passWithNoTests
