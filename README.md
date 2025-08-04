@@ -34,7 +34,7 @@ A modern, production-ready implementation of the classic Space Invaders arcade g
 
 ## 🎯 **Live Demo**
 
-[Play the Game](https://your-deployment-url.com) (Replace with your deployment URL)
+[Play the Game](https://evinhua.github.io/space_invaders/) - Live on GitHub Pages!
 
 ## 🚀 **Quick Start**
 
@@ -215,7 +215,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/evinhua/space_invaders/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/evinhua/space_invaders/discussions)
-- 📧 **Contact**: [Your Email](mailto:your-email@example.com)
+- 📧 **Contact**: [GitHub Profile](https://github.com/evinhua)
 
 ## 🎯 **Roadmap**
 
