@@ -14,7 +14,7 @@ export function useKeyboard(): KeyboardState {
   const justPressedRef = useRef<Set<string>>(new Set())
   const justReleasedRef = useRef<Set<string>>(new Set())
   const previousKeysRef = useRef<Set<string>>(new Set())
-  const frameRef = useRef<number>()
+  const frameRef = useRef<number | undefined>(undefined)
   
   const updateKeyStates = useCallback(() => {
     // Clear just pressed/released sets
@@ -105,7 +105,7 @@ export function useKeyboard(): KeyboardState {
       window.removeEventListener('blur', handleBlur)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
       
-      if (frameRef.current) {
+      if (frameRef.current !== undefined) {
         cancelAnimationFrame(frameRef.current)
       }
     }

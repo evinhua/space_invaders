@@ -1,5 +1,8 @@
 import '@testing-library/jest-dom'
 
+// Extend Jest matchers
+expect.extend({})
+
 // Mock Web Audio API
 global.AudioContext = jest.fn().mockImplementation(() => ({
   createOscillator: jest.fn().mockReturnValue({

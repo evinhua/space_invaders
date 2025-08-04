@@ -7,8 +7,8 @@ export interface GameLoopCallbacks {
 }
 
 export function useGameLoop(callbacks: GameLoopCallbacks, isActive: boolean = true) {
-  const requestRef = useRef<number>()
-  const previousTimeRef = useRef<number>()
+  const requestRef = useRef<number | undefined>(undefined)
+  const previousTimeRef = useRef<number | undefined>(undefined)
   const lagRef = useRef<number>(0)
   const fpsCounterRef = useRef({ frames: 0, lastTime: 0, fps: 0 })
   
@@ -75,7 +75,7 @@ export function useGameLoop(callbacks: GameLoopCallbacks, isActive: boolean = tr
     }
     
     return () => {
-      if (requestRef.current) {
+      if (requestRef.current !== undefined) {
         cancelAnimationFrame(requestRef.current)
       }
     }
