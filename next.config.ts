@@ -5,21 +5,30 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // 禁用 Next.js 热重载，由 nodemon 处理重编译
+  // Enable static export for GitHub Pages
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  // Disable server-side features for static export
   reactStrictMode: false,
   webpack: (config, { dev }) => {
     if (dev) {
-      // 禁用 webpack 的热模块替换
+      // Disable webpack's hot module replacement for development
       config.watchOptions = {
-        ignored: ['**/*'], // 忽略所有文件变化
+        ignored: ['**/*'], // Ignore all file changes
       };
     }
     return config;
   },
   eslint: {
-    // 构建时忽略ESLint错误
+    // Ignore ESLint errors during builds
     ignoreDuringBuilds: true,
   },
+  // GitHub Pages configuration
+  basePath: process.env.NODE_ENV === 'production' ? '/space_invaders' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/space_invaders/' : '',
 };
 
 export default nextConfig;
